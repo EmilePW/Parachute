@@ -1,0 +1,11 @@
+<div class="logo-header">
+	<h3 class="categories-header">CATEGORIES</h3>
+	<hr class="header-separator"/>
+</div>
+
+<div class="category" ng-repeat="category in categories">
+	<button class="category-icon hvr-push">
+		<i class="fa fa-{{ category.icon }}"></i>
+	</button>
+	<h4 class="category-name">{{ category.name }}</h4>
+</div>

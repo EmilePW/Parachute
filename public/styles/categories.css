@@ -1,0 +1,50 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10px;
+	background: rgba(41, 128, 185,1.0);
+}
+
+.logo-header {
+	margin: 0 auto;
+	text-align: center;
+	color: #fff;
+	font-size: 180%;
+	margin-bottom: 30px;
+}
+
+.categories-header {
+	font-weight: 300;
+}
+
+.header-separator {
+	margin-top: -10px;
+}
+
+.category {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.category-icon {
+	border-radius: 100%;
+	border: 2px solid #fff;
+	color: #fff;
+	background: none;
+	width: 70px;
+	height: 70px;
+	font-size: 20px;
+	outline: none;
+}
+
+.category-name {
+	margin: 0 auto;
+	margin-top: 10px;
+	font-size: 120%;
+	font-weight: 300;
+	color: #fff;
+	border: 2px solid #fff;
+	width: 100px;
+	padding: 5px;
+}
+

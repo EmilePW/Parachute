@@ -1,0 +1,23 @@
+{
+  "name": "parachute",
+  "version": "1.0.0",
+  "description": "Find things to do nearby",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmilePW/Parachute.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmilePW/Parachute/issues"
+  },
+  "homepage": "https://github.com/EmilePW/Parachute#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {}
+}
