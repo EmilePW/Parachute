@@ -1,0 +1,56 @@
+<div ng-repeat="choice in choices" ng-show="$index == currentIndex">
+	<div class="image slide"
+		ng-style="{
+			'z-index': '-2',
+			'position': 'absolute',
+			'height': '100%',
+			'width': '100%',
+			'margin': '0',
+			'top': '0',
+			'left': '0',
+			'background': 'url({{choice.image}}) no-repeat center center fixed',
+			'-webkit-background-size': 'cover',
+			'-moz-background-size': 'cover',
+			'-o-background-size': 'cover',
+			'background-size': 'cover'
+		}">
+	</div>
+
+		<div class="info" ng-show="visible">
+			<div class="description">
+				<div class="title">
+					<h3>{{ choice.name }}</h3>
+				</div>
+				<div class="blurb">
+					<p>{{ choice.description }}</p>
+				</div>
+				<div class="price">
+					<p>{{ choice.price }}</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="take-me" ng-show="visible">
+			<button class="hvr-push">
+				<i class="fa fa-map-marker"></i>
+			</button>
+			<br>
+			<p>Take Me</p>
+		</div>
+
+		<div class="navigate" ng-hide="visible">
+			<button class="nav-left" ng-click="prevChoice()">
+				<i class="fa fa-chevron-left"></i>
+			</button>
+			<button class="nav-right" ng-click="nextChoice()">
+				<i class="fa fa-chevron-right"></i>
+			</button>
+		</div>
+
+		<div class="query">
+			<button class="mystery hvr-push" ng-click="whatAmI()">
+				<span ng-hide="visible">?</span>
+				<span ng-show="visible">X</span>
+			</button>
+		</div>
+</div>
