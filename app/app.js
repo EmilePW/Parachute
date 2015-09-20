@@ -2,24 +2,78 @@
 
 angular.module('parachute', ['ngRoute', 'door3.css', 'ngAnimate']);
 
+// Factory to share data about categories between views
 angular.module('parachute').factory('CategoryData', function($http) {
-	var storedCategory;
+	var currentCategory;
 
 	return {
 		// Save chosen category for reuse
 		saveCategory: function(data) {
-			storedCategory = data;
+			currentCategory = data;
 		},
 		getCategory: function() {
-			return storedCategory;
+			if(typeof currentCategory === 'undefined') {
+				alert('No category found');	
+			} else {
+				return currentCategory;
+			}
 		},
-		getChoices: function() {
+		getChoicesFromCategory: function() {
 			// Get choices from db given for chosen category
 			return $http.get('db/choices.json')
 						.then(function(response) {
 							// Return array of choices on success
-							return response.data[storedCategory];
+							return response.data[currentCategory];
 						});
+		}
+	}
+});
+
+// Factory to share data about choices between views
+angular.module('parachute').factory('ChoiceData', function($http) {
+	var currentChoice;
+
+	return {
+		// Save chosen choice for reuse
+		saveChoice: function(data) {
+			currentChoice = data;
+		},
+		getChoice: function() {
+			if(typeof currentChoice === 'undefined') {
+				alert('No choice found');
+			} else {
+				return currentChoice;
+			}
+		},
+		getMapFromChoice: function() {
+
+		}
+	}
+});
+
+// Geolocation factory
+angular.module('parachute').factory('LocationData', function($http) {
+	var currentLocation = {
+		latitude: null,
+		longitude: null
+	};
+
+	return {
+		saveLocation: function() {
+			navigator.geolocation.getCurrentPosition(
+		   		function(response) {
+		   			var location = response.coords;
+		   			currentLocation.latitude = location.latitude;
+		   			currentLocation.longitude = location.longitude;
+		   		}
+		   	);
+		},
+		getLocation: function() {
+			if(typeof currentLocation === 'undefined') {
+				alert('Location not stored');
+			} else {
+				return currentLocation;
+			}
 		}
 	}
 });
@@ -56,8 +110,8 @@ angular.module('parachute')
 		})
 	}]);
 
-angular.module('parachute').controller('homeCtrl', ['$scope', function($scope) {
-
+angular.module('parachute').controller('homeCtrl', ['$scope', 'LocationData', function($scope, LocationData) {
+	$scope.saveLocation = LocationData.saveLocation;
 }]);
 
 angular.module('parachute').controller('categoriesCtrl', ['$scope', 'CategoryData', function($scope, CategoryData) {
@@ -90,7 +144,7 @@ angular.module('parachute').controller('restaurantsCtrl', ['$scope', function($s
 angular.module('parachute').controller('choicesCtrl', ['$scope', 'CategoryData', function($scope, CategoryData) {
 	
 	// Get choices given category and successful request
-	CategoryData.getChoices().then(function(choices) {
+	CategoryData.getChoicesFromCategory().then(function(choices) {
 		$scope.choices = choices;
 	});
 
@@ -114,7 +168,22 @@ angular.module('parachute').controller('choicesCtrl', ['$scope', 'CategoryData',
 	}
 }]);
 
-angular.module('parachute').controller('mapCtrl', ['$scope', function($scope) {
+angular.module('parachute').controller('mapCtrl', ['$scope', 'LocationData', function($scope, LocationData) {
+	$scope.currentLocation = LocationData.getLocation();
 
+	$scope.makeMap = function() {
+		var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(
+          	$scope.currentLocation.latitude,
+          	$scope.currentLocation.longitude
+          ),
+          zoom: 18,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+    }
+
+    $scope.makeMap();
 }]);
 

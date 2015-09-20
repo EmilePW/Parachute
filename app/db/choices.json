@@ -80,7 +80,7 @@
 		{
 			"name": "Buckingham Palace",
 			"description": "Where The Queen Lives",
-			"price": "Free",
+			"price": "FREE",
 			"image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Buckingham_Palace_from_gardens,_London,_UK_-_Diliff.jpg",
 			"location": ""
 		},
@@ -94,7 +94,7 @@
 		{
 			"name": "Hyde Park",
 			"description": "Londons Largest Park",
-			"price": "Free",
+			"price": "FREE",
 			"image": "http://www.wickfordextendedservices.co.uk/wp-content/uploads/2015/03/london_hyde-park-81.jpg",
 			"location": ""
 		},
