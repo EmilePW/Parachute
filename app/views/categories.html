@@ -5,9 +5,9 @@
 
 <div class="category" ng-repeat="category in categories">
 	<a href="#choices">
-		<button class="category-icon hvr-push">
+		<button class="category-icon hvr-push" ng-model="category.name" ng-click="chooseCategory(category.name)">
 			<i class="fa fa-{{ category.icon }}"></i>
 		</button>
 	</a>
-	<h4 class="category-name">{{ category.name }}</h4>
+	<h4 class="category-name">{{ category.name | uppercase }}</h4>
 </div>
