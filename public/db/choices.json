@@ -4,43 +4,71 @@
 			"name": "Chateaux Mimeux",
 			"description": "Rustic French Cuisine",
 			"price": "£££",
-			"image": "https://images.unsplash.com/photo-1428259067396-2d6bd3827878?q=80&fm=jpg&s=6d1a4b4472cda3fa55bd0da1919e22e2"
+			"image": "https://images.unsplash.com/photo-1428259067396-2d6bd3827878?q=80&fm=jpg&s=6d1a4b4472cda3fa55bd0da1919e22e2",
+			"location": {
+				"latitude": 51.5058485,
+				"longitude": -0.16606
+			}
 		},
 		{
 			"name": "All Organic",
 			"description": "Fresh Organic Sandwich Bar",
 			"price": "££",
-			"image": "https://images.unsplash.com/photo-1429012178110-d7a734a56176?q=80&fm=jpg&s=b4823ac3378dc87ec9f3f5e36c306681"
+			"image": "https://images.unsplash.com/photo-1429012178110-d7a734a56176?q=80&fm=jpg&s=b4823ac3378dc87ec9f3f5e36c306681",
+			"location": {
+				"latitude": 51.511431,
+				"longitude": -0.1424136
+			}
 		},
 		{
 			"name": "Sugar Man",
 			"description": "Sweet Bakery",
 			"price": "£",
-			"image": "https://images.unsplash.com/photo-1422919869950-5fdedb27cde8?q=80&fm=jpg&s=79e6ea67e8fd37af2833db624571ff0d"
+			"image": "https://images.unsplash.com/photo-1422919869950-5fdedb27cde8?q=80&fm=jpg&s=79e6ea67e8fd37af2833db624571ff0d",
+			"location": {
+				"latitude": 51.5157681,
+				"longitude": -0.1219707
+			}
 		},
 		{
 			"name": "Freddie P's Fried Chicken",
 			"description": "Greasy, Southern Fried and Delicious",
 			"price": "£",
-			"image": "https://images.unsplash.com/photo-1426869981800-95ebf51ce900?q=80&fm=jpg&s=2c89e023814a3fdb98edc129cf1357c2"
+			"image": "https://images.unsplash.com/photo-1426869981800-95ebf51ce900?q=80&fm=jpg&s=2c89e023814a3fdb98edc129cf1357c2",
+			"location": {
+				"latitude": 51.5223318,
+				"longitude": -0.0857698
+			}
 		},
 		{
 			"name": "Bison",
 			"description": "Michelin-Starred Steakhouse",
 			"price": "££££",
-			"image": "https://images.unsplash.com/photo-1432139509613-5c4255815697?q=80&fm=jpg&s=c417a5af0232c852b0eac1b8a8976320"
+			"image": "https://images.unsplash.com/photo-1432139509613-5c4255815697?q=80&fm=jpg&s=c417a5af0232c852b0eac1b8a8976320",
+			"location": {
+				"latitude": 51.5207674,
+				"longitude": -0.1301004 
+			}
 		},
 		{
 			"name": "Crunch Time",
 			"description": "Relaxed Vegan Bistro",
 			"price": "££",
-			"image": "https://images.unsplash.com/reserve/oMRKkMc4RSq7N91OZl0O_IMG_8309.jpg?q=80&fm=jpg&s=9f0adb6c4d9775850a615a4fda2083fa"
+			"image": "https://images.unsplash.com/reserve/oMRKkMc4RSq7N91OZl0O_IMG_8309.jpg?q=80&fm=jpg&s=9f0adb6c4d9775850a615a4fda2083fa",
+			"location": {
+				"latitude": 51.5223318,
+				"longitude": -0.0857698
+			}
 		},
 		{
 			"name": "Ocarina",
 			"description": "Modern Mediterranean Fusion" ,
 			"price": "£££",
-			"image": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&fm=jpg&s=66c5f8478d54feddba8cfc9b901a4e32"
+			"image": "https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&fm=jpg&s=66c5f8478d54feddba8cfc9b901a4e32",
+			"location": {
+				"latitude": 51.5270493,
+				"longitude": -0.121432
+			}
 		}
 	],
 	"bars": [
@@ -48,25 +76,41 @@
 			"name": "Jordan's",
 			"description": "Laid Back Sports Bar",
 			"price": "£",
-			"image": "https://images.unsplash.com/photo-1421622548261-c45bfe178854?q=80&fm=jpg&s=c1b7593a4df9c30e89c4c66a814e7bff"
+			"image": "https://images.unsplash.com/photo-1421622548261-c45bfe178854?q=80&fm=jpg&s=c1b7593a4df9c30e89c4c66a814e7bff",
+			"location": {
+				"latitude": 51.5204389,
+				"longitude": -0.1033947
+			}
 		},
 		{
 			"name": "Il Vino",
 			"description": "High Quality Wine Bar",
 			"price": "£££",
-			"image": "https://images.unsplash.com/photo-1416235150813-dcb31b0653e8?q=80&fm=jpg&s=b82e9ed08f6655b9627f8b023748826e"
+			"image": "https://images.unsplash.com/photo-1416235150813-dcb31b0653e8?q=80&fm=jpg&s=b82e9ed08f6655b9627f8b023748826e",
+			"location": {
+				"latitude": 51.5153115,
+				"longitude": -0.102236
+			}
 		},
 		{
 			"name": "The Minstrel",
 			"description": "Converted British Pub",
 			"price": "££",
-			"image": "https://images.unsplash.com/reserve/6TjIJK0uSJWtQUZuQWMW_58400023.jpg?q=80&fm=jpg&s=d9cdc1cce7cc7a87b7f17f95ae2eff43"
+			"image": "https://images.unsplash.com/reserve/6TjIJK0uSJWtQUZuQWMW_58400023.jpg?q=80&fm=jpg&s=d9cdc1cce7cc7a87b7f17f95ae2eff43",
+			"location": {
+				"latitude": 51.5118658,
+				"longitude": -0.1335056
+			}
 		},
 		{
 			"name": "Bar 54",
 			"description": "Perfect Cocktails, 300m Up",
 			"price": "££££",
-			"image": "https://images.unsplash.com/photo-1429623077761-9635d93ddd02?q=80&fm=jpg&s=966e4882837a2220e5a6ccb797ba6de5"
+			"image": "https://images.unsplash.com/photo-1429623077761-9635d93ddd02?q=80&fm=jpg&s=966e4882837a2220e5a6ccb797ba6de5",
+			"location": {
+				"latitude": 51.492001,
+				"longitude": -0.125671
+			}
 		}			
 	],
 	"landmarks": [
