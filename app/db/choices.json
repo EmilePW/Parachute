@@ -75,42 +75,60 @@
 			"description": "Europe's Tallest Ferris Wheel",
 			"price": "£££",
 			"image": "https://images.unsplash.com/photo-1413725834248-42db82938bef?q=80&fm=jpg&s=25b59989681b19d99f12545c5d8867d1",
-			"location": "chicago, il"
+			"location": {
+				"latitude": 51.50332,
+				"longitude": -0.11954
+			}
 		},
 		{
 			"name": "Buckingham Palace",
 			"description": "Where The Queen Lives",
 			"price": "FREE",
 			"image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Buckingham_Palace_from_gardens,_London,_UK_-_Diliff.jpg",
-			"location": ""
+			"location": {
+				"latitude": 51.50136,
+				"longitude": -0.14189
+			}
 		},
 		{
-			"name": "Sea Life Centre",
+			"name": "Sea Life London Aquarium",
 			"description": "Over 7000 Water-Bound Species",
 			"price": "££",
 			"image": "http://mb.cision.com/Public/8585/9541112/b8123b8639d85edc_org.jpg",
-			"location": ""
+			"location": {
+				"latitude": 51.50260,
+				"longitude": -0.11868
+			}
 		},
 		{
 			"name": "Hyde Park",
 			"description": "Londons Largest Park",
 			"price": "FREE",
 			"image": "http://www.wickfordextendedservices.co.uk/wp-content/uploads/2015/03/london_hyde-park-81.jpg",
-			"location": ""
+			"location": {
+				"latitude": 51.50727,
+				"longitude": -0.16573
+			}
 		},
 		{
 			"name": "British Museum",
 			"description": "One of World's Largest Collections",
 			"price": "FREE",
 			"image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/British_Museum_from_NE_2.JPG",
-			"location": ""
+			"location": {
+				"latitude": 51.51941,
+				"longitude": -0.12696
+			}
 		},
 		{
 			"name": "The Shard",
 			"description": "London's Tallest Tower",
 			"price": "££££",
 			"image": "http://mediacentre.kallaway.co.uk/pics/shard/hires/SP801_LBP_Aerial.jpg",
-			"location": ""
+			"location": {
+				"latitude": 51.50639,
+				"longitude": -0.08851
+			}
 		}
 	]
 }
