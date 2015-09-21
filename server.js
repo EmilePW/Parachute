@@ -5,7 +5,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', function(req, res) {
-	res.render('index');
+	res.sendfile('index.html', {root: __dirname });
 });
 
 var port = process.env.PORT || 5000;
