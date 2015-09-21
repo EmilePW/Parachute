@@ -37,6 +37,7 @@ angular.module('parachute').factory('ChoiceData', function($http) {
 		// Save chosen choice for reuse
 		saveChoice: function(data) {
 			currentChoice = data;
+			console.log(currentChoice);
 		},
 		getChoice: function() {
 			if(typeof currentChoice === 'undefined') {
@@ -141,14 +142,12 @@ angular.module('parachute').controller('restaurantsCtrl', ['$scope', function($s
 	}
 }]);
 
-angular.module('parachute').controller('choicesCtrl', ['$scope', 'CategoryData', function($scope, CategoryData) {
+angular.module('parachute').controller('choicesCtrl', ['$scope', 'CategoryData', 'ChoiceData', function($scope, CategoryData, ChoiceData) {
 	
 	// Get choices given category and successful request
 	CategoryData.getChoicesFromCategory().then(function(choices) {
 		$scope.choices = choices;
 	});
-
-	console.log(CategoryData.getCategory());
 
 	$scope.whatAmI = function() {
 		$scope.visible ? $scope.visible = false : $scope.visible = true;
@@ -166,12 +165,18 @@ angular.module('parachute').controller('choicesCtrl', ['$scope', 'CategoryData',
 			$scope.currentIndex = $scope.choices.length - 1 :		
 			$scope.currentIndex = ($scope.currentIndex - 1) % $scope.choices.length;
 	}
+
+	$scope.chooseChoice = function(data) {
+		ChoiceData.saveChoice(data);
+	}
 }]);
 
-angular.module('parachute').controller('mapCtrl', ['$scope', 'LocationData', function($scope, LocationData) {
+angular.module('parachute').controller('mapCtrl', ['$scope', 'LocationData', 'ChoiceData', function($scope, LocationData, ChoiceData) {
 	$scope.currentLocation = LocationData.getLocation();
 
 	$scope.makeMap = function() {
+		var directionsService = new google.maps.DirectionsService;
+		var directionsDisplay = new google.maps.DirectionsRenderer;
 		var mapCanvas = document.getElementById('map');
         var mapOptions = {
           center: new google.maps.LatLng(
@@ -181,7 +186,33 @@ angular.module('parachute').controller('mapCtrl', ['$scope', 'LocationData', fun
           zoom: 18,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
-        var map = new google.maps.Map(mapCanvas, mapOptions)
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+        directionsDisplay.setMap(map);
+
+    	$scope.findDirections(directionsService, directionsDisplay);
+    }
+
+    $scope.findDirections = function(directionsService, directionsDisplay) {
+    	var request = {
+    		origin: new google.maps.LatLng(
+	        	$scope.currentLocation.latitude,
+	          	$scope.currentLocation.longitude
+	        ),
+    		destination: new google.maps.LatLng(
+    			ChoiceData.getChoice().location.latitude,
+    			ChoiceData.getChoice().location.longitude
+    		),
+    		travelMode: google.maps.TravelMode.WALKING
+    	}
+
+    	directionsService.route(request, function(response, status) {
+			if (status === google.maps.DirectionsStatus.OK) {
+				console.log(response);
+				directionsDisplay.setDirections(response);
+			} else {
+				console.log(status);
+			}
+		});
     }
 
     $scope.makeMap();
