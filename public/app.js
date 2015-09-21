@@ -136,12 +136,6 @@ angular.module('parachute').controller('categoriesCtrl', ['$scope', 'CategoryDat
 	];
 }]);
 
-angular.module('parachute').controller('restaurantsCtrl', ['$scope', function($scope) {
-	$scope.whatAmI = function() {
-		$scope.visible = true;
-	}
-}]);
-
 angular.module('parachute').controller('choicesCtrl', ['$scope', 'CategoryData', 'ChoiceData', function($scope, CategoryData, ChoiceData) {
 	
 	// Get choices given category and successful request
