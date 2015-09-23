@@ -75,6 +75,47 @@ angular.module('parachute').factory('LocationData', function($http) {
 			} else {
 				return currentLocation;
 			}
+		},
+		// Haversine formula to calculate distance between two points
+		haversine: function(firstLocation, secondLocation) {
+			// Radius of the Earth (in km)
+			var r = 6371;
+
+			function toRadians(angle) {
+				return angle * Math.PI / 180;
+			}
+
+
+			function halfChordSquare(a, b) {
+				return Math.pow( Math.sin( toRadians( Math.abs( a - b)) / 2), 2);
+			}
+
+			var a = halfChordSquare(firstLocation.latitude, secondLocation.latitude)
+					+ halfChordSquare(firstLocation.longitude, secondLocation.longitude)
+					* Math.cos(toRadians(firstLocation.latitude))
+					* Math.cos(toRadians(secondLocation.latitude));
+
+			console.log(c(a));
+
+			function c(a) {
+				return 2 * Math.atan2(Math.sqrt(a), Math.sqrt((1 - a)));
+			}
+
+			//return distance between points in km
+			return r * c(a);
+
+		},
+		//Distance is in km
+		nearbyLocations: function(distance, choices) {
+			
+			var nearbyChoices = [];
+			for(var i = 0; i < choices.length; i++) {
+				if( this.haversine(this.getLocation(), choices[i].location) < distance ) {
+					nearbyChoices.push(choices[i]);
+				}
+			}
+
+			return nearbyChoices;
 		}
 	}
 });
@@ -136,11 +177,12 @@ angular.module('parachute').controller('categoriesCtrl', ['$scope', 'CategoryDat
 	];
 }]);
 
-angular.module('parachute').controller('choicesCtrl', ['$scope', 'CategoryData', 'ChoiceData', function($scope, CategoryData, ChoiceData) {
+angular.module('parachute').controller('choicesCtrl', ['$scope', 'CategoryData', 'ChoiceData', 'LocationData', function($scope, CategoryData, ChoiceData, LocationData) {
 	
 	// Get choices given category and successful request
 	CategoryData.getChoicesFromCategory().then(function(choices) {
 		$scope.choices = choices;
+		console.log(LocationData.nearbyLocations(1, choices));
 	});
 
 	$scope.whatAmI = function() {
