@@ -32,7 +32,7 @@ body {
 
 .info {
 	position: absolute;
-	z-index: -1;
+	z-index: 2;
 	background: rgba(41, 128, 185, 0.8);
 	height: 100%;
 	width: 100%;
@@ -127,11 +127,17 @@ body {
 }
 
 .nav-left {
+	display: none;
 	float: left;
 	margin-left: 20px;
 }
 
 .nav-right {
+	display: none;
 	float: right;
 	margin-right: 20px;
+}
+
+.non-draggable {
+	-webkit-user-drag: none;
 }

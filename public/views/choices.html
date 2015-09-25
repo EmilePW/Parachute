@@ -1,7 +1,7 @@
-<div ng-repeat="choice in choices" ng-show="$index == currentIndex">
-	<div class="image slide"
+<div ng-repeat="choice in choices" ng-show="$index == currentIndex" ng-swipe-left="nextChoice()" ng-swipe-right="prevChoice()" ng-click="works()">
+	<div class="image slide non-draggable"
 		ng-style="{
-			'z-index': '-2',
+			'z-index': '1',
 			'position': 'absolute',
 			'height': '100%',
 			'width': '100%',

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('parachute', ['ngRoute', 'door3.css', 'ngAnimate']);
+angular.module('parachute', ['ngRoute', 'door3.css', 'ngAnimate', 'ngTouch']);
 
 // Factory to share data about categories between views
 angular.module('parachute').factory('CategoryData', function($http) {
@@ -204,6 +204,10 @@ angular.module('parachute').controller('choicesCtrl', ['$scope', 'CategoryData',
 
 	$scope.chooseChoice = function(data) {
 		ChoiceData.saveChoice(data);
+	}
+
+	$scope.works = function() {
+		console.log('It works');
 	}
 }]);
 
